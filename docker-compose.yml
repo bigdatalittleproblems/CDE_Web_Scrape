@@ -1,0 +1,22 @@
+version: '3.3'
+services:
+  CDEwebscrape:
+    image: selenium/standalone-chrome-debug
+#    ports:
+#      - "5900:5900"
+    networks: 
+      - cdeappnet
+  pythonscript:
+    depends_on: 
+      - CDEwebscrape
+    restart: on-failure
+    build: .
+    volumes:
+    - type: bind
+      source: .
+      target: /usr/src/
+    networks: 
+      - cdeappnet
+networks:
+  cdeappnet:
+    driver: bridge

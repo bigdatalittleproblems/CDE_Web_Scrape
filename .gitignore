@@ -1,0 +1,12 @@
+*.csv
+*.xlsx
+ReportOutput*/
+.vscode/
+#README.md
+Pipfile
+Pipfile.lock
+__pycache__
+!Resources/
+/ReportOutputFinal/
+/test.py
+Fail_log.txt

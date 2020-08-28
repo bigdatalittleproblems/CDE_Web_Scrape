@@ -1,0 +1,9 @@
+#requirements for CDE Web Scrape
+selenium 
+pandas 
+xlrd 
+numpy 
+openpyxl 
+xlrd 
+lxml
+cowsay
