@@ -35,7 +35,7 @@ reports = ReportNames()
 SchoolYear_CDE = reports.SchoolYear_CDE
 susReport = reports.availableReports['suspensionReports']
 dataReportTypes = reports.dataTypeOptions
-# compSchools=pd.read_csv(os.path.join(projectWD,'Resources','CompSchoolAltSchoolID.txt'),sep='\t')
+compSchools=pd.read_csv(os.path.join(projectWD,'Resources','CDS_Codes.txt'),sep='\t')
 CDE_School_List = pd.read_csv(os.path.join(projectWD, 'Resources', 'CDE_SchoolScrapeList.txt'), sep='\t')
 ##Tests
 # CDE_School_List=CDE_School_List[19:20]

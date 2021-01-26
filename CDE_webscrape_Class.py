@@ -20,7 +20,7 @@ import cowsay
 # from selenium.webdriver.common.action_chains import ActionChains
 projectWD = os.getcwd()
 
-compSchools = pd.read_csv(os.path.join(projectWD, 'Resources', 'CompSchoolAltSchoolID.txt'), sep='\t')
+compSchools = pd.read_csv(os.path.join(projectWD, 'Resources', 'CDS_Codes.txt'), sep='\t')
 
 
 # compSchools['CompSchool_CDS'].duplicated()
@@ -40,7 +40,7 @@ class ReportNames():
         }
         self.availableSubgroups = ['All Students', 'Male', 'Female', 'EL', 'Non-EL', 'SWD', 'Non-SWD']
         self.SchoolYear_CDE = ['2018-19', '2017-18', '2016-17', '2015-16']
-        self.compSchools = pd.read_csv(os.path.join(projectWD, 'Resources', 'CompSchoolAltSchoolID.txt'), sep='\t')
+        self.compSchools = pd.read_csv(os.path.join(projectWD, 'Resources', 'CDS_Codes.txt'), sep='\t')
         self.dataTypeOptions = ['ethnicity', 'programSubgroup', 'academicYear']
         self.districts = ['Los Angeles Unified', 'Los Angeles', 'Statewide', 'Los Angeles County Office of Education',
                           'Inglewood Unified', 'Lennox', 'Compton Unified']
@@ -155,7 +155,6 @@ class CDE_WebScrapeSelenium():
             return faillist
         else:
             return [None]
-
     def setup_method(self):
         self.driver = webdriver.Chrome()
         self.driver.set_page_load_timeout(30)
@@ -164,7 +163,7 @@ class CDE_WebScrapeSelenium():
 
     def setup_method_docker(self, dockerIP='localhost:4444'):
         if sys.platform == 'linux':
-            dockerIP = 'phase2_cde_scrape_CDEwebscrape_1:4444'
+            dockerIP = 'selenium-cde:4444'
         capabilities = DesiredCapabilities.CHROME.copy()
         selenium_grid_url = f"http://{dockerIP}/wd/hub"
         print(f'using selenium grid: {selenium_grid_url}')

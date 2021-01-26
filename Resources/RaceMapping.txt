@@ -1,0 +1,4 @@
+Region	Source	SourceRace	Race_Ethnicity	Race_Ethnicity_Agg
+CA	CALPADS	Black/African Am	AA	AA
+CA	CALPADS	Hispanic	Latinx	Latinx
+CA	CALPADS	White	White	Other Ethnicity
